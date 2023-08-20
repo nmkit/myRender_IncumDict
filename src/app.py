@@ -6,13 +6,10 @@ import pandas as pd
 import numpy as np
 import datetime
 
-
-
-
-w120_meaning_en_dict= np.load(r'..\assets/w120_meaning_en_dict.npy', allow_pickle=True).item()
-w120_meaning_zh_dict= np.load(r'..\assets/w120_meaning_zh_dict.npy', allow_pickle=True).item()
-sim_meaning_en_dict= np.load(r'..\assets/sim_meaning_en_dict.npy', allow_pickle=True).item()
-sim_meaning_zh_dict= np.load(r'..\assets/sim_meaning_zh_dict.npy', allow_pickle=True).item()
+w120_meaning_en_dict= np.load(r'../assets/w120_meaning_en_dict.npy', allow_pickle=True).item()
+w120_meaning_zh_dict= np.load(r'../assets/w120_meaning_zh_dict.npy', allow_pickle=True).item()
+sim_meaning_en_dict= np.load(r'../assets/sim_meaning_en_dict.npy', allow_pickle=True).item()
+sim_meaning_zh_dict= np.load(r'../assets/sim_meaning_zh_dict.npy', allow_pickle=True).item()
 
 simple_text = dcc.Markdown('{}'.format('a')
 )
