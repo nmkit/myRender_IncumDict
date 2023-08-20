@@ -42,6 +42,16 @@ app.index_string = '''
         {%favicon%}
         {%css%}
     </head>
+    <body>
+        
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+        
+    </body>
 </html>
 '''
 
@@ -51,7 +61,7 @@ server = app.server
 app.layout = dbc.Container([
 
     dbc.Row(
-        dbc.Col([html.H2("Incumbrance Dictionary產權負擔字典",
+        dbc.Col([html.H2("產權負擔字典Incumbrance Dictionary",
                         className='text-center text-primary'),
                 html.Hr(),
 
@@ -62,9 +72,15 @@ app.layout = dbc.Container([
 
     ),
 
-
     # content of each page
-    dash.page_container
+    dash.page_container,
+
+    dbc.Col([html.Div("由樓訊易有限公司提供Provided by Proinfo Tech Limited",
+                            className='text-center'),
+                    html.Hr(),
+
+
+                    ], width=12),
 
 
 

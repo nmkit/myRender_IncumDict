@@ -198,12 +198,7 @@ layout = [dbc.Row(
                     id="collapse_en", is_open=False
                 ),
 
-                html.Br(),
-                html.Label(
-                    ['Disclamier: This dictionary is intended for general reference purposes only and does not constitute the provision of any professional advice. Purchasing a second-hand property may involve complex legal issues, and users should carefully consider seeking advice from relevant professionals before making any decisions. The information provided in this article should not replace professional advice, and readers should assume their own risks associated with referencing this content.'
-                     ],
 
-                    ),
 
 
                 html.Hr(),
@@ -221,7 +216,17 @@ layout = [dbc.Row(
                         id="advice_sent_en",
                         )
                     ]
-                )
+                ),
+
+                html.Br(),
+                html.Label(
+                    ['Disclamier: This dictionary is intended for general reference purposes only and does not constitute the provision of any professional advice. '
+                     'Purchasing a second-hand property may involve complex legal issues, and users should carefully consider seeking advice from relevant professionals before making any decisions. '
+                     #'The information provided in this article should not replace professional advice, and users should assume their own risks associated with referencing this content.'
+                     ],
+
+                    ),
+                html.Hr(),
 
 
 
