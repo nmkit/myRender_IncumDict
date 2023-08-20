@@ -150,7 +150,7 @@ eng_incum_list=['AGREEMENT FOR SALE AND PURCHASE',
  'UNDERTAKING LETTER',
  'WAIVER LETTER']
 
-dash.register_page(__name__, path='/')
+dash.register_page(__name__, path='/', title='Incumbrance Dictionary')
 
 layout = [dbc.Row(
         dbc.Col(html.P(
@@ -165,7 +165,7 @@ layout = [dbc.Row(
     dbc.Row([
 
         dbc.Col([
-            dcc.Markdown('Enter Encumbrance:'),
+            dcc.Markdown('Enter Incumbrance:'),
             dcc.Dropdown(id='my-dpdn', multi=False,placeholder='Please Enter',
                          options=[{'label': x, 'value': x}
                                   for x in eng_incum_list],
@@ -183,7 +183,7 @@ layout = [dbc.Row(
                 dbc.CardHeader(
                     [
                     dbc.Button(
-                        "More Details on this Encumbrance",
+                        "More Details on this Incumbrance",
                         color="link",
                         id="button-question-1",
                     ),
@@ -194,7 +194,7 @@ layout = [dbc.Row(
                 ),
 
                 dbc.Collapse(
-                    dbc.CardBody(children="Please enter an Encumbrance first.",),
+                    dbc.CardBody(children="Please enter an Incumbrance first.",),
                     id="collapse_en", is_open=False
                 ),
 

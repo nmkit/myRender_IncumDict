@@ -28,7 +28,7 @@ server = app.server
 app.layout = dbc.Container([
 
     dbc.Row(
-        dbc.Col([html.H2("Encumbrance Dictionary產權負擔字典",
+        dbc.Col([html.H2("Incumbrance Dictionary產權負擔字典",
                         className='text-center text-primary'),
                 html.Hr(),
 
