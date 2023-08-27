@@ -318,7 +318,7 @@ layout = [dbc.Row(
         dbc.Col([
             dcc.Markdown('輸入產權負擔名稱:'),
             dcc.Dropdown(id='my_dpdn_zh', multi=False, placeholder='請輸入',
-                         options=[{'label': b, 'value': a}
+                         options=[{'label': b+'|'+a, 'value': a}
                                   for a, b in eng_zh_incum_pairs],
                          ),
             #dcc.Graph(id='line-fig', figure={})
