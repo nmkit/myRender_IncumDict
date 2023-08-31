@@ -361,7 +361,9 @@ layout = [dbc.Row(
                     ),
 
                     html.Label(
-                        ['可', html.A('按此', href='https://www.proinfotech.net/contact/',target="_blank"), '聯絡我們的專業團隊。'],
+                        ['可', html.A('按此', href='https://www.proinfotech.net/contact/',target="_blank"),
+                         '或電郵proinfotech@skypeaksurveyor.com',
+                         '聯絡我獲取免費的咨詢服務。'],
                         id="advice_sent_zh",
                         )
                     ]
