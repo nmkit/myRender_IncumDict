@@ -303,93 +303,82 @@ eng_zh_incum_pairs= zip(eng_incum_list, zh_incum_list)
 
 dash.register_page(__name__, path='/zh',title='產權負擔字典')
 
-layout = [dbc.Row(
-        dbc.Col(html.P(
-                    html.A("Eng", href='/'
-                         )
-                ,className='text-end'),
+layout = dbc.Container([
+    dbc.Row(
+        dbc.Col([
+            html.H2("產權負擔字典 Incumbrance Dictionary", className='text-center text-primary'),
+            html.Hr(),
+        ], width=12),
+    ),
 
-        width=10)
+    # Content of each page (dash.page_container)
 
+    dbc.Col([
+        html.Div("由樓訊易有限公司提供 Provided by Proinfo Tech Limited", className='text-center'),
+        html.Hr(),
+    ], width=12),
+
+], fluid=True)
+
+# Second page layout
+layout = [
+    dbc.Row(
+        dbc.Col(html.P(html.A("Eng", href='/'), className='text-end'), width=10)
     ),
 
     dbc.Row([
-
         dbc.Col([
             dcc.Markdown('輸入產權負擔名稱:'),
-            dcc.Dropdown(id='my_dpdn_zh', multi=False, placeholder='請輸入',
-                         options=[{'label': b+'|'+a, 'value': a}
-                                  for a, b in eng_zh_incum_pairs],
-                         ),
-            #dcc.Graph(id='line-fig', figure={})
-            dcc.Markdown(id='simple_text_zh', children= '{}'.format(''), style={"margin-top": "25px"} ),
-            # dbc.Collapse(
-            #         dbc.CardBody("Because it's a lot better than a hotdog."),
-            #         id="collapse_zh", is_open=True
-            # ),
+            dcc.Dropdown(
+                id='my_dpdn_zh',
+                multi=False,
+                placeholder='請輸入',
+                options=[{'label': b + '|' + a, 'value': a} for a, b in eng_zh_incum_pairs],
+            ),
+            dcc.Markdown(id='simple_text_zh', children='', style={"margin-top": "25px"}),
+            html.Div(style={"text-align": "center"}),
+            html.Hr(),
 
-            html.Div(#html.H6("Product: a beautiful Pizza reheated after a day in the fridge, for $99"),
-                     style={"text-align":"center"}),
-                html.Hr(),
+            dbc.Card([
                 dbc.CardHeader(
-                        dbc.Button(
-                            "了解更多",
-                            color="link",
-                            id="button-question-1",
-                        )
+                    dbc.Button("詳細解釋", color="primary", id="button-question-1", className="btn-md"),
                 ),
-
-
-
-
-
-
                 dbc.Collapse(
-                    dbc.CardBody(children="請先填入想查詢的產權負擔",),
-                    id="collapse_zh", is_open=False
+                    dbc.CardBody("請先填入想查詢的產權負擔"),
+                    id="collapse_zh",
+                    is_open=False,
                 ),
+            ]),
 
+            html.Hr(),
 
-                html.Hr(),
-
-
-                dbc.CardHeader(
-                    [html.H5(
-                        "需要更個人化的咨詢服務?",
-                        #color="link",
-                        id="personal_advice_header_zh",
-                    ),
-
+            dbc.Card([
+                dbc.CardHeader([
+                    html.H5("需要更個人化的咨詢服務?", id="personal_advice_header_zh"),
                     html.Label(
-                        ['可', html.A('按此', href='https://www.proinfotech.net/contact/',target="_blank"),
-                         '或電郵proinfotech@skypeaksurveyor.com',
-                         '聯絡我獲取免費的咨詢服務。'],
+                        [
+                            '可',
+                            html.A('按此', href='https://www.proinfotech.net/contact/', target="_blank"),
+                            '或電郵 proinfotech@skypeaksurveyor.com',
+                            '聯絡我獲取免費的咨詢服務。',
+                        ],
                         id="advice_sent_zh",
-                        )
-                    ]
-
-
-                ),
-
+                    ),
+                ]),
                 html.Br(),
                 html.Label(
-                    ['備註:'
-                     '本字典僅供一般參考之用，並不構成提供任何專業意見。購買二手樓可能涉及複雜的法律問題，使用者在做出任何決策前應審慎考慮尋求相關專業人士的建議。'],
-
+                    [
+                        '備註: 本字典僅供一般參考之用，並不構成提供任何專業意見。',
+                        '購買二手樓可能涉及複雜的法律問題，使用者在做出任何決策前應審慎考慮尋求相關專業人士的建議。',
+                    ],
+                    style={"padding": "10px"}  # Adjust the padding value as needed
                 ),
+            ]),
 
-                html.Hr(),
-
-
-
-
-
-        ],  # width={'size':5, 'offset':1, 'order':1},
-            xs=12, sm=12, md=12, lg=5, xl=5
-        ),
-    ],
-justify='center')
-    ]
+            html.Hr(),
+        ], xs=12, sm=12, md=12, lg=5, xl=5),
+    ], justify='center'),
+]
 
 
 
